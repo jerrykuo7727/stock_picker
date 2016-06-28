@@ -20,4 +20,8 @@ puts "*********************************************"
 puts "Please enter the prices: "
 stock_prices = gets.split.map(&:to_i)
 timing = stock_picker(stock_prices)
-puts "Buy at day #{timing[0]+1}, sell at day #{timing[1]+1}."
+unless timing == [-1, -1] 
+	puts "Buy at day #{timing[0]+1}, sell at day #{timing[1]+1}."
+else
+	puts "You will get no profit!"
+end
